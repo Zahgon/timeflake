@@ -16,10 +16,7 @@ def parse(
 
 
 def random() -> Timeflake:
-    timestamp = int(time.time() * 1000)
-    rand = int.from_bytes(os.urandom(10), "big", signed=False)
-    value = ((timestamp << 80) | rand).to_bytes(16, "big")
-    return Timeflake(from_bytes=value)
+    pass
 
 
 def from_values(timestamp: int, random: Optional[int] = None) -> Timeflake:

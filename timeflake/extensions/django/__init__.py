@@ -14,7 +14,7 @@ class TimeflakeBinary(models.Field):
     description = "Timeflake UUID (128-bit)"
 
     def __init__(self, *args, **kwargs):
-        super(TimeflakeBinary, self).__init__(*args, **kwargs)
+        pass
 
     def deconstruct(self):
         pass
@@ -40,10 +40,7 @@ class TimeflakeBinary(models.Field):
 
 class TimeflakePrimaryKeyBinary(TimeflakeBinary):
     def __init__(self, *args, **kwargs):
-        kwargs["primary_key"] = True
-        kwargs["editable"] = False
-        kwargs["default"] = timeflake.random
-        super(TimeflakePrimaryKeyBinary, self).__init__(*args, **kwargs)
+        pass
 
     def deconstruct(self):
         pass

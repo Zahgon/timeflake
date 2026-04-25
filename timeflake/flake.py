@@ -12,13 +12,7 @@ MAX_TIMEFLAKE = 340282366920938463463374607431768211455
 
 class Timeflake(uuid.UUID):
     def __init__(self, from_bytes: bytes):
-        if from_bytes is None:
-            raise ValueError("from_bytes is a required parameter")
-        super(self.__class__, self).__init__(bytes=from_bytes)
-        # Validate flake
-        as_int = self.int
-        if as_int < 0 or MAX_TIMEFLAKE < as_int:
-            raise ValueError("Invalid flake provided")
+        pass
 
     @property
     def uuid(self) -> uuid.UUID:
