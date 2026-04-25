@@ -22,16 +22,16 @@ class Timeflake(uuid.UUID):
 
     @property
     def uuid(self) -> uuid.UUID:
-        return uuid.UUID(bytes=self.bytes)
+        pass
 
     @property
     @lru_cache(1)
     def base62(self) -> str:
-        return itoa(self.int, BASE62, padding=22)
+        pass
 
     @property
     def timestamp(self) -> int:
-        return self.int >> 80
+        pass
 
     @property
     def random(self) -> int:
